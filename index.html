@@ -1,97 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" ng-app="campus360">
+
 <head>
-    <title>Student Registration Form</title>
-
-    <style>
-        body{
-            background-color:#f2f2f2;
-            font-family:Arial, sans-serif;
-        }
-
-        .form-box{
-            width:350px;
-            margin:50px auto;
-            padding:20px;
-            border:2px solid #4CAF50;
-            border-radius:10px;
-            background-color:white;
-            box-shadow:0 0 10px gray;
-        }
-
-        h2{
-            text-align:center;
-            color:#4CAF50;
-        }
-
-        input, select{
-            width:100%;
-            padding:8px;
-            margin-top:5px;
-            margin-bottom:15px;
-        }
-
-        .gender{
-            width:auto;
-        }
-
-        .btn{
-            width:45%;
-            background-color:#4CAF50;
-            color:white;
-            border:none;
-            padding:10px;
-            cursor:pointer;
-        }
-
-        .btn:hover{
-            background-color:green;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+    <title>Student Management App</title>
 </head>
 
-<body>
+<body ng-controller="dashboardcontroller">
 
-<div class="form-box">
+    <input type="text" ng-model="collegename">
+    <h1>{{collegename}}</h1>
 
-    <h2>Student Registration Form</h2>
+    <br><br>
 
-    <form>
+    <input type="number" ng-model="totalStudents">
+    <h4>Total Students:{{totalstudents}}</h4>
+    <button ng-click="totalStudents = totalStudents + 1">
+        Add Student
+    </button>
 
-        <label><b>Name</b></label>
-        <input type="text" placeholder="Enter your name">
+    <br><br>
 
-        <label><b>Department</b></label>
-        <select>
-            <option>--Select Department--</option>
-            <option>MCA</option>
-            <option>MBA</option>
-            <option>BCA</option>
-            <option>BSc Computer Science</option>
-        </select>
+    <input type="number" ng-model="totalFaculty">
+    <h4>Total Faculty:{{totalfaculty}}</h4>
+    <button ng-click="totalFaculty = totalFaculty + 1">
+        Add Faculty
+    </button>
+    <h2>student list</h2>
+    <ul>
+        <li ng-repeat="student in students">
+            {{student}}
 
-        <label><b>Gender</b></label><br><br>
-
-        <input type="radio" name="gender" class="gender"> Male
-        <input type="radio" name="gender" class="gender"> Female
-        <input type="radio" name="gender" class="gender"> Other
-
-        <br><br>
-
-        <label><b>Email</b></label>
-        <input type="email" placeholder="Enter your email">
-
-        <label><b>Phone Number</b></label>
-        <input type="tel" placeholder="Enter your phone number">
-
-        <center>
-            <input type="submit" value="Submit" class="btn">
-            <input type="reset" value="Reset" class="btn">
-        </center>
-
-    </form>
-
-</div>
+        </li>
+    </ul>
 
 </body>
 </html>
