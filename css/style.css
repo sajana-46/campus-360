@@ -1,0 +1,106 @@
+/* Page Styling */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eef2f7;
+    margin: 30px;
+}
+
+/* Dashboard Container */
+div{
+    background-color: white;
+    width: 650px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+/* Headings */
+h1{
+    color: #1f4e79;
+    margin-bottom: 10px;
+}
+
+h2{
+    color: #333;
+}
+
+h3{
+    color: #555;
+}
+
+/* Inputs */
+input{
+    width: 250px;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* Dropdown */
+select{
+    width: 270px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+    font-size: 15px;
+}
+
+/* Buttons */
+button{
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: #1d4ed8;
+}
+
+/* Student List */
+ul{
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px 30px;
+    border-radius: 5px;
+}
+
+li{
+    padding: 5px;
+}
+
+/* Text Colors */
+.green{
+    color: green;
+    font-weight: bold;
+}
+
+.red{
+    color: red;
+    font-weight: bold;
+}
+
+.blue{
+    color: royalblue;
+    font-weight: bold;
+}
+
+/* Filter Demo */
+p{
+    font-size: 16px;
+}
+
+label{
+    font-weight: bold;
+}
+
+hr{
+    margin: 25px 0;
+}
