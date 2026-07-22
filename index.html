@@ -85,7 +85,81 @@
 
     <select name="departments"  ng-model="selectedDepartment" ng-options="department for department in departments">
     </select>
-    <p>Selected Department: {{selectedDepartment}}</p>
+
+    <hr>
+
+    <h2>Department Info</h2>
+
+    <div ng-switch="selectedDepartment">
+
+        <div ng-switch-when="Computer Science">
+            <h3>Computer Science Department</h3>
+            <p>Head: Dr. Smith</p>
+            <p>Number of Students: 200</p>
+
+        </div>
+
+        <div ng-switch-when="Electrical Engineering">
+            <h3>Electrical Engineering Department</h3>
+            <p>Head: Dr. Johnson</p>
+            <p>Number of Students: 150</p>
+
+        </div>
+
+        <div ng-switch-when="Mechanical Engineering">
+            <h3>Mechanical Engineering Department</h3>
+            <p>Head: Dr. Williams</p>
+            <p>Number of Students: 180</p>
+
+        </div>
+
+        <div ng-switch-when="Civil Engineering">
+            <h3>Civil Engineering Department</h3>
+            <p>Head: Dr. Brown</p>
+            <p>Number of Students: 220</p>
+
+        </div>
+
+        <div ng-switch-when="Business Administration">
+            <h3>Business Administration Department</h3>
+            <p>Head: Dr. Davis</p>
+            <p>Number of Students: 300</p>
+
+        </div>
+
+        <div ng-switch-default>
+            <h3>Please select a department to view its information.</h3>
+        </div>
+    </div>
+
+    <h2>ng-init demo</h2>
+
+    <div ng-init="collegecode = 'CAMPUS360' ; location = 'Angamaly'">
+
+        <p>College Code: {{collegecode}}</p>
+        <p>Location: {{location}}</p>
+
+    </div>
+
+    <h2>ng-disabled Demo</h2>
+
+    <button ng-click="allowAdmission()">
+        Enable Admission
+    </button>
+
+    <br><br>
+
+    <button ng-click="disableAdmission()">
+        Disable Admission
+    </button>
+
+    <br><br>
+    <p>Disabled: {{isDisabled}}</p>
+    <button ng-disabled="isDisabled">
+        Admission
+    </button>
+
+
 
 </body>
 </html>

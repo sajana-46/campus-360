@@ -44,4 +44,13 @@ app.controller("dashboardController", function ($scope) {
     $scope.fees = 25000;
     $scope.today = new Date();
     $scope.selectedDepartment = "Computer Science";
+   $scope.isDisabled = true;
+
+    $scope.allowAdmission = function () {
+        $scope.isDisabled = false;
+    };
+
+    $scope.disableAdmission = function () {
+        $scope.isDisabled = true;
+    };
 });

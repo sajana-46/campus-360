@@ -1,106 +1,298 @@
-/* Page Styling */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background: #eef2f7;
-    margin: 30px;
+    font-family:'Share Tech Mono', monospace;
+    background:#060b13;
+    color:#d7f7ff;
+    padding:40px;
+    min-height:100vh;
+
+    background-image:
+    linear-gradient(rgba(0,234,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,234,255,.05) 1px, transparent 1px);
+
+    background-size:40px 40px;
 }
 
-/* Dashboard Container */
-div{
-    background-color: white;
-    width: 650px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-    margin-bottom: 20px;
+/* Floating Dashboard */
+
+div[ng-show]{
+    max-width:900px;
+    margin:auto;
+    padding:30px;
+
+    background:rgba(8,15,28,.85);
+
+    border:2px solid #00eaff;
+
+    box-shadow:
+    0 0 10px #00eaff,
+    inset 0 0 15px rgba(0,234,255,.15);
+
+    position:relative;
 }
 
-/* Headings */
+/* futuristic corners */
+
+div[ng-show]::before,
+div[ng-show]::after{
+    content:"";
+    position:absolute;
+    width:25px;
+    height:25px;
+    border:3px solid #9dff00;
+}
+
+div[ng-show]::before{
+    top:-3px;
+    left:-3px;
+    border-right:none;
+    border-bottom:none;
+}
+
+div[ng-show]::after{
+    bottom:-3px;
+    right:-3px;
+    border-left:none;
+    border-top:none;
+}
+
 h1{
-    color: #1f4e79;
-    margin-bottom: 10px;
+    color:#00eaff;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    margin-bottom:20px;
+    text-shadow:0 0 15px #00eaff;
 }
 
 h2{
-    color: #333;
+    color:#9dff00;
+    margin-top:25px;
+    margin-bottom:10px;
+    text-transform:uppercase;
 }
 
 h3{
-    color: #555;
+    color:#ffb000;
+    margin-bottom:10px;
 }
 
-/* Inputs */
-input{
-    width: 250px;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #bbb;
-    border-radius: 5px;
-    font-size: 15px;
-}
-
-/* Dropdown */
+input,
 select{
-    width: 270px;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #bbb;
-    font-size: 15px;
+
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+
+    background:#08111f;
+    color:white;
+
+    border:2px solid #00eaff;
+
+    outline:none;
+
+    transition:.3s;
 }
 
-/* Buttons */
+input:focus,
+select:focus{
+
+    border-color:#9dff00;
+
+    box-shadow:
+    0 0 15px #9dff00;
+}
+
 button{
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 5px;
-    transition: 0.3s;
+
+    margin:8px 5px;
+    padding:12px 20px;
+
+    background:transparent;
+
+    color:#00eaff;
+
+    border:2px solid #00eaff;
+
+    text-transform:uppercase;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    clip-path:polygon(
+        8% 0,
+        100% 0,
+        100% 75%,
+        92% 100%,
+        0 100%,
+        0 25%
+    );
 }
 
 button:hover{
-    background-color: #1d4ed8;
+
+    background:#00eaff;
+    color:#061018;
+
+    box-shadow:
+    0 0 20px #00eaff,
+    0 0 40px #00eaff;
 }
 
-/* Student List */
 ul{
-    background: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 15px 30px;
-    border-radius: 5px;
+
+    list-style:none;
+
+    margin-top:20px;
 }
 
 li{
-    padding: 5px;
+
+    margin:8px 0;
+
+    padding:12px;
+
+    border-left:4px solid #9dff00;
+
+    background:rgba(157,255,0,.08);
+
+    transition:.3s;
 }
 
-/* Text Colors */
+li:hover{
+
+    transform:translateX(10px);
+
+    background:rgba(157,255,0,.15);
+}
+
+/* ng-class colors */
+
 .green{
-    color: green;
-    font-weight: bold;
+
+    color:#9dff00;
+    text-shadow:0 0 12px #9dff00;
 }
 
 .red{
-    color: red;
-    font-weight: bold;
+
+    color:#ff5d4d;
+    text-shadow:0 0 12px #ff5d4d;
 }
 
 .blue{
-    color: royalblue;
-    font-weight: bold;
-}
 
-/* Filter Demo */
-p{
-    font-size: 16px;
-}
-
-label{
-    font-weight: bold;
+    color:#00eaff;
+    text-shadow:0 0 12px #00eaff;
 }
 
 hr{
-    margin: 25px 0;
+
+    border:none;
+    height:2px;
+
+    background:linear-gradient(
+    to right,
+    transparent,
+    #00eaff,
+    transparent);
+
+    margin:40px 0;
+}
+
+p{
+
+    margin:8px 0;
+}
+
+label{
+
+    color:#9dff00;
+}
+
+select{
+
+    cursor:pointer;
+}
+
+/* Scan line animation */
+body::after{
+
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    pointer-events:none;
+
+    background:repeating-linear-gradient(
+        to bottom,
+
+        rgba(0,234,255,0.02) 0px,
+        rgba(0,234,255,0.02) 2px,
+
+        rgba(0,234,255,0.18) 3px,
+
+        rgba(0,234,255,0.02) 4px,
+
+        transparent 6px
+    );
+
+    mix-blend-mode:screen;
+
+    opacity:.8;
+
+    animation:scan 5s linear infinite,
+               flicker .12s infinite alternate;
+}
+
+@keyframes scan{
+    from{
+        transform:translateY(-100%);
+    }
+    to{
+        transform:translateY(100%);
+    }
+}
+
+@keyframes flicker{
+    from{
+        opacity:.65;
+    }
+    to{
+        opacity:.9;
+    }
+}
+
+@keyframes scan{
+
+    from{
+        transform:translateY(-100%);
+    }
+
+    to{
+        transform:translateY(100%);
+    }
+
+}
+
+button:disabled {
+    color: #555;
+    border-color: #444;
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+button:disabled:hover {
+    background: transparent;
+    color: #555;
+    box-shadow: none;
 }
