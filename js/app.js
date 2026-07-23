@@ -50,7 +50,35 @@ app.controller("dashboardController", function ($scope) {
         $scope.isDisabled = false;
     };
 
+    $scope.isReadOnly=true;
+    $scope.toggleReadOnly = function () {
+
+        $scope.isReadOnly = !$scope.isReadOnly;
+    };
+
+    $scope.student = {};
+
+
+    $scope.student = {};
+
+
+$scope.departmentList = [
+    "Computer Science",
+    "Electrical Engineering",
+    "Mechanical Engineering",
+    "Civil Engineering",
+    "Business Administration"
+];
+
+
+$scope.genderList = [
+    "Male",
+    "Female"
+];
+
+
     $scope.disableAdmission = function () {
         $scope.isDisabled = true;
     };
+
 });

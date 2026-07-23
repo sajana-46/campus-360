@@ -158,6 +158,229 @@
     <button ng-disabled="isDisabled">
         Admission
     </button>
+    <br>
+
+    <br><br>
+
+    <hr>
+
+<h2>ng-readonly demo</h2>
+
+<label>college id</label>
+
+<br><br>
+<input
+    type="text"
+    ng-model="collegecode"
+    ng-readonly="isReadOnly">
+<br><br>
+
+<button ng-click="toggleReadOnly()">
+    Toggle Readonly
+</button>
+
+        <p>readonly status: {{isReadOnly}}</p>
+
+  <hr> 
+  <br><br>
+
+    <h2>Student Registration</h2>
+    <form name="studentForm">
+
+<label>Student Name</label>
+<br>
+<input type="text"
+ name="studentname" 
+ ng-model="student.name"
+ ng-minlength="3"
+ ng-maxlength="20"
+ 
+ required>
+<p ng-show="studentForm.studentname.$touched && studentForm.studentname.$error.required" style="color:red;">Student name is required
+
+
+</p>
+ <p ng-show="studentForm.studentname.$touched && studentForm.studentname.$error.minlength" style="color:red;">minimum 3 characters required
+<p>
+
+    <p ng-show="studentForm.studentname.$touched && studentForm.studentname.$error.maxlength" style="color:red;">maximum 20 characters required
+<p>
+
+
+</p>
+    
+
+
+<br><br>
+<label>Email</label>
+<br>
+<input type="email" name="studentemail" ng-model="student.email" required>
+<p ng-show="studentForm.studentemail.$touched && studentForm.studentemail.$error.required" style="color:red;">Student email is required</p>
+    
+<p ng-show="studentForm.studentemail.$error.email && studentForm.studentemail.$touched" style="color:red">
+Enter a valid email
+</p>
+<br><br>
+
+
+<label>Age </label>
+        <br />
+        <input type="number" ng-model="student.age" min="1" max="100" name="age" />
+        <p ng-show="studentForm.age.$touched &&
+                 studentForm.age.$error.required" style="color:red;">
+            Age is required
+        </p>
+
+        <p ng-show="studentForm.age.$touched &&
+                 studentForm.age.$error.min" style="color:red;">
+            Age must be greater than 0
+        </p>
+
+        <p ng-show="studentForm.age.$touched &&
+                 studentForm.age.$error.max" style="color:red;">
+            Age cannot be greater than 100
+        </p>
+
+        <p ng-show="student.age >= 18" style="color:green;">
+            Eligible
+        </p>
+
+        <p ng-show="student.age > 0 && student.age < 18" style="color:red;">
+            Not Eligible. Age must be 18 or above.
+        </p>
+
+        <br />
+        <br /><br />
+<label>Gender</label><br>
+
+<select
+name="studentgender"
+ng-model="student.gender"
+ng-options="gender for gender in genderList"
+required>
+
+<option value="">Select Gender</option>
+
+</select>
+
+<p ng-show="studentForm.studentgender.$error.required && studentForm.studentgender.$touched" style="color:red">
+Gender is required
+</p>
+<label>Address</label><br>
+
+<input
+type="text"
+name="studentaddress"
+ng-model="student.address"
+ng-minlength="10"
+ng-maxlength="100"
+required>
+</textarea>
+
+<p ng-show="studentForm.studentaddress.$error.required && studentForm.studentaddress.$touched" style="color:red">
+Address is required
+</p>
+
+<p ng-show="studentForm.studentaddress.$error.minlength" style="color:red">
+Minimum 10 characters
+</p>
+
+<p ng-show="studentForm.studentaddress.$error.maxlength" style="color:red">
+Maximum 100 characters
+</p>
+<label>Department</label><br>
+
+<select
+name="studentdepartment"
+ng-model="student.department"
+ng-options="dept for dept in departmentList"
+required>
+
+<option value="">Select Department</option>
+
+</select>
+
+<p ng-show="studentForm.studentdepartment.$error.required && studentForm.studentdepartment.$touched" style="color:red">
+Department is required
+</p>
+
+<label>Phone Number</label><br>
+
+<input
+type="tel"
+name="studentphone"
+ng-model="student.phonenumber"
+ng-pattern="/^[0-9]{10}$/"
+required>
+
+<p ng-show="studentForm.studentphone.$error.required && studentForm.studentphone.$touched" style="color:red">
+Phone number is required
+</p>
+
+<p ng-show="studentForm.studentphone.$error.pattern && studentForm.studentphone.$touched" style="color:red">
+Phone number must contain exactly 10 digits
+</p>
+
+
+<button
+type="submit"
+ng-disabled="studentForm.$invalid">
+Register Student
+</button>
+
+    </form>
+
+    <br>
+    <br><br>
+
+    <h2>form status</h2>
+
+
+    <p>
+        valid:{{studentForm.$valid}}
+    </p>
+
+
+<p>
+    inavlid:{{studentForm.$invalid}}
+</p>
+
+<p>
+
+    pristine:{{studentForm.$pristine}}
+</p>
+
+<p>
+    dirty:{{studentForm.$dirty}}
+</p>
+
+<p>
+student name touched : {{studentForm.studentname.$touched}}
+
+</p>
+
+
+<p>
+
+    student name valid : {{studentForm.studentname.$valid}}
+</p>
+
+
+<p>
+student name invalid : {{studentForm.studentname.$invalid}}
+
+</p>
+
+<p>student name error required : {{studentForm.studentname.$error.required}}
+
+
+</p>
+
+
+
+
+
+
 
 
 
