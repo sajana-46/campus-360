@@ -59,7 +59,10 @@ app.controller("dashboardController", function ($scope) {
     $scope.student = {};
 
 
-    $scope.student = {};
+    $scope.registerstudent=function(){
+
+        alert("student registred successfully")
+    };
 
 
 $scope.departmentList = [
